@@ -1,0 +1,24 @@
+﻿@model NextLevelBootcamp_Northwind.Models.Employees
+@{
+    ViewBag.Title = "EmployesAdd";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<h2>Çalışan Ekle</h2>
+<br />
+
+@using (Html.BeginForm("EmployesAdd", "Employes", FormMethod.Post))
+{
+        <form class="table table-striped custom-table" method="post">
+            @Html.Label("İsim")
+            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+            <br />
+            @Html.Label("Soyisim")
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+            <br />
+            @Html.Label("Ünvan")
+            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br /><br />
+            <button class="btn btn-primary">Kaydet</button>
+        </form>        
+}

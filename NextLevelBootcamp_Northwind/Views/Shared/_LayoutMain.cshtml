@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css-table-20/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/css-table-20/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css-table-20/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/css-table-20/css/style.css">
+    <style>
+        #btn:hover {
+            background-color: khaki;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Next Level Bootcamp", "Index", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="content">
+
+        <div class="container">
+           
+            <div class="table-responsive">
+
+                <br />
+                @RenderBody()
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year</p>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/css-table-20/js/jquery-3.3.1.min.js"></script>
+    <script src="~/css-table-20/js/popper.min.js"></script>
+    <script src="~/css-table-20/js/bootstrap.min.js"></script>
+    <script src="~/css-table-20/js/main.js"></script>
+</body>
+</html>

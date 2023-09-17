@@ -1,0 +1,30 @@
+﻿@using NextLevelBootcamp_Northwind.Models;
+@model List<Employees>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<button style="background-color:aliceblue; color: white; border: none; width: 150px; height:50px; border-radius: 20px"><a href="/Employes/EmployesAdd" class="mb-5">Çalışan Ekle</a></button>
+<br />
+<table class="table table-striped custom-table">
+    <thead>
+        <tr>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Ünvan</th>
+            <th scope="col">Siparişler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.FirstName</td>
+                <td>@x.LastName</td>
+                <td>@x.Title</td>
+                <td><a href="/Employes/Sales/@x.EmployeeID" id="btn">Sipariş Listesi</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

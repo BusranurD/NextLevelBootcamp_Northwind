@@ -1,0 +1,31 @@
+﻿@using NextLevelBootcamp_Northwind.Models;
+@model List<Orders>
+@{
+    ViewBag.Title = "Sales";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<button style="background-color:aliceblue; color: white; border: none; width: 150px; height:50px; border-radius: 20px"><a href="/Employes/Index" class="mb-5">Geri Dön</a></button>
+
+<table class="table table-striped custom-table">
+    <thead>
+        <tr>
+            <th scope="col">Sipariş No</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Gönderildiği Ülke</th>
+
+
+        </tr>
+        </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.OrderID</td>
+                <td>@Convert.ToDateTime(x.OrderDate).ToString("dd/MM/yyyy")</td>
+                <td>@x.ShipCountry</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
